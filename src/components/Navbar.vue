@@ -1,0 +1,53 @@
+<script setup>
+import { RouterLink } from "vue-router";
+import { useDark, useToggle } from "@vueuse/core";
+import { onMounted, computed } from "vue";
+
+import HomeLogo from "@/assets/Icons/home.png";
+import AboutLogo from "@/assets/Icons/about.png";
+import SunnyLogo from "@/assets/Icons/sunny.png";
+import MoonLogo from "@/assets/Icons/moon.png";
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
+const logoSrc = computed(() => (isDark.value ? SunnyLogo : MoonLogo));
+// const sunnyLogo = ref('@/assets/Icons/sunny.png')
+onMounted(() => {
+  isDark.value = true; // Force dark mode to be active on page load
+});
+</script>
+<template>
+  <nav
+    class="absolute w-full bottom-0 z-10 md:static bg-white py-3 rounded-2xl shadow-lg mb-2  bg-white/40  ring-1 ring-black/5"
+  >
+    <div class="flex items-center justify-evenly text-center">
+      <RouterLink class="flex items-center" to="/">
+        <img
+          :src="HomeLogo"
+          alt="logo"
+          class="bg-center"
+          width="24px"
+        />
+      </RouterLink>
+      <RouterLink class="flex items-center" to="/">
+        <img
+          :src="AboutLogo"
+          alt="logo"
+          class="bg-center "
+          width="26px"
+          c
+        />
+      </RouterLink>
+      <button class="shadow-2xl flex items-center" @click="toggleDark()">
+        <!-- <box-icon :name="isDark ? 'sun' : 'moon'"  ></box-icon> -->
+        <img
+          :src="logoSrc"
+          alt="logo"
+          class="bg-center"
+          width="24px"
+        :class="isDark ? '' : 'scale-x-[-1]'"
+        />
+      </button>
+    </div>
+  </nav>
+</template>

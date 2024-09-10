@@ -20,7 +20,7 @@
       </div>
 
       <!-- trial -->
-      <div class="isolate aspect-video  rounded-xl bg-white/40 shadow-lg ring-1 ring-black/5">
+      <div class="isolate aspect-video  rounded-xl bg-white/50 dark:bg-[#3d315f] shadow-lg ring-1 ring-black/5">
 
         </div>
     </div>

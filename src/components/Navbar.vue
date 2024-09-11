@@ -18,9 +18,11 @@ onMounted(() => {
 </script>
 <template>
   <nav
-    class="absolute w-full bottom-0 z-10 md:static bg-white py-3 rounded-2xl shadow-lg mb-2  bg-white/40  ring-1 ring-black/5"
+    class="w-full fixed bottom-0 z-10 md:static px-2.5 mb-2"
   >
-    <div class="flex items-center justify-evenly text-center">
+    <!-- for nav -->
+     <div class="py-3 rounded-2xl shadow-lg bg-white  bg-white/40  ring-1 ring-black/5">
+      <div class="flex items-center justify-evenly text-center">
       <RouterLink class="flex items-center" to="/">
         <img
           :src="HomeLogo"
@@ -49,5 +51,6 @@ onMounted(() => {
         />
       </button>
     </div>
+     </div>
   </nav>
 </template>

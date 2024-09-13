@@ -48,9 +48,7 @@ onMounted(() => {
 </script>
 <template>
     <form @submit.prevent="handleSearch">
-        <input type="text" placeholder="Search a City" v-model="search.query">
+        <input class="bg-transparent outline-1" type="text" placeholder="Search a City" v-model="search.query">
     </form>
-    <div>
-        {{ search.query }}
-    </div>
+
 </template>

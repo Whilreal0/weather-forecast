@@ -1,13 +1,19 @@
 <script setup>
+import {  ref } from 'vue'
 import LocationCard from '@/components/LocationCard.vue'
-import WeatherCard from '@/components/WeatherCard.vue'
-import WeatherCardInfo from '@/components/WeatherCardInfo.vue'
+
+import SearchInput from '@/components/SearchInput.vue'
+
+const weatherData = ref(null);
+const handleWeatherData = (data) => {
+  weatherData.value = data; // Storing the emitted weather data
+};
+
 </script>
 
 <template>
   <main class="absolute w-full top-0 mt-10 md:mt-0 z-10 md:static ">
-    <LocationCard />
-    <WeatherCard />
-    <WeatherCardInfo />
+    <LocationCard :weather="weatherData"/>
+    <SearchInput @weather-data="handleWeatherData"/>
   </main>
 </template>

@@ -31,7 +31,7 @@ onMounted(() => {
           width="24px"
         />
       </RouterLink>
-      <RouterLink class="flex items-center" to="/">
+      <RouterLink class="flex items-center" to="/about">
         <img
           :src="AboutLogo"
           alt="logo"

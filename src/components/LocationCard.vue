@@ -41,8 +41,9 @@ watch(
 );
 </script>
 <template>
-  <div class="flex flex-col text-center " v-if="weatherState">
-    <div :class="[ 'relative flex flex-col bg-cover bg-center bg-no-repeat h-[350px] rounded-t-xl p-2', weatherState.weather[0].icon.includes('d') ? 'bg-day' : 'bg-night' ]">
+  
+   <div class="flex flex-col text-center " v-if="weatherState && weatherState.weather && weatherState.main">
+    <div :class="[ 'relative flex flex-col bg-cover bg-center bg-no-repeat h-[360px] rounded-t-xl p-2', weatherState.weather[0].icon.includes('d') ? 'bg-day' : 'bg-night' ]">
     <div class="bg-black opacity-30 absolute inset-0 rounded-t-xl"></div>
     <div class="flex flex-col justify-between h-full z-10 ">
       <div class=" text-left ">
@@ -62,10 +63,8 @@ watch(
      
       <h1 class="text-7xl ">{{ Math.round(weatherState.main.temp) }}&deg;C</h1>
     </div>
-    <!-- <div class="text-center">
-      <h1 class="text-7xl ">{{ Math.round(weatherState.main.temp) }}&deg;C</h1>
-    </div> -->
-      <div class="text-right">
+
+      <div class="text-left">
         <span class="text-4xl "> {{ weatherState.name }},{{ weatherState.sys.country || 'Unknown Country' }}</span>
       </div>
     </div>
@@ -103,5 +102,7 @@ watch(
         </div> -->
     </div>
   </div>
-  <div v-else>not found</div>
+  <div v-else>
+    <span class="text-red-700 dark:text-red-500 text-center flex justify-center">No Data Available . Search Again!</span>
+  </div>
 </template>

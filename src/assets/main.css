@@ -1,6 +1,11 @@
 @tailwind base;
+body{
+    @apply transition-all duration-200
+}
 @tailwind components;
 @tailwind utilities;
+
+
 /* 
 
 #a688fa light mode bg

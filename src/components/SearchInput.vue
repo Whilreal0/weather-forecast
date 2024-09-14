@@ -39,6 +39,7 @@ onMounted(() => {
     search.results = JSON.parse(savedWeatherData);
     search.query = savedQuery;
     emit('weather-data', JSON.parse(savedWeatherData)); // Emit saved weather data
+    search.query = '';
   } else {
     // Default city to load on first page visit
     search.query = 'Manila';

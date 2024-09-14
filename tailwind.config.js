@@ -6,7 +6,12 @@ export default {
   ],
   darkMode: 'selector',
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'day': "url('@/assets/Icons/Day.png')", // Adjusted path
+        'night': "url('@/assets/Icons/Night.png')", // Adjusted path
+      }
+    },
   },
   plugins: [],
 }

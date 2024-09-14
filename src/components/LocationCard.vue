@@ -43,7 +43,7 @@ watch(
 <template>
   <div class="flex flex-col text-center " v-if="weatherState">
     <div :class="[ 'relative flex flex-col bg-cover bg-center bg-no-repeat h-[350px] rounded-t-xl p-2', weatherState.weather[0].icon.includes('d') ? 'bg-day' : 'bg-night' ]">
-    <div class="bg-black opacity-10 absolute inset-0 "></div>
+    <div class="bg-black opacity-10 absolute inset-0 rounded-t-x"></div>
     <div class="flex flex-col justify-between h-full z-10 ">
       <div class=" text-left ">
         <span>{{ dateToday() }}</span>

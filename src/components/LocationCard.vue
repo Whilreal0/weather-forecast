@@ -9,10 +9,9 @@ import NightClouds from "@/assets/Icons/night-clouds.png";
 import Rainy from "@/assets/Icons/rainy.png";
 
 import WindSpeedIcon from "@/assets/Icons/wind-speed.png";
-import WindGustIcon from "@/assets/Icons/wind-gust.png";
+// import WindGustIcon from "@/assets/Icons/wind-gust.png";
 import HumidityIcon from "@/assets/Icons/humidity.png";
 import PressureIcon from "@/assets/Icons/pressure.png";
-
 
 // Define a prop to receive the weather data from the parent
 const props = defineProps({
@@ -73,32 +72,29 @@ watch(
   </div>
   
     <div class="grid grid-cols-3 gap-2 mt-5">
-      <div class="isolate aspect-video flex flex-row gap-2 px-2 justify-items-center items-center rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
-        <div class=" flex p-1 rounded-full">
-          <img :src="WindSpeedIcon" alt="Wind Speed" width="27">
+      <div class="isolate aspect-video flex flex-col justify-center items-center rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 p-2 ">
+        <img class="text-red-300" :src="WindSpeedIcon" alt="Wind Speed" width="35">
+        <span>{{ weatherState.wind.speed }} km/h</span>
+      </div>
+      <div class="isolate aspect-video flex flex-col justify-center items-center rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 p-2 ">
+        <div class="">
+          <img :src="PressureIcon" alt="Pressure" width="35">
         </div>
         <div class="flex flex-col">
-          <span class="text-sm">Wind Speed</span>
-          <span>{{ weatherState.wind.speed }} km/h</span>
+          <span>{{Math.round(weatherState.main.pressure)}} hPa</span>
         </div>
       </div>
-      <!-- <div class="isolate aspect-video  flex flex-col rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
-        <span>Wind Gust</span>
-        <span v-if="!weatherState.wind.gust">17 km/h</span>
-        <span v-else>{{ weatherState.wind.gust }}km/h</span>
-      </div> -->
-      <div class="isolate aspect-video  flex flex-col rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
-        <span>Pressure</span>
-        <span>{{Math.round(weatherState.main.pressure)}}</span>
-      </div>
-      <div class="isolate aspect-video  flex flex-col rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
-        <span>Humidity</span>
-        <span>{{ Math.round(weatherState.main.humidity) }}%</span>
+      <div class="isolate aspect-video flex flex-col justify-center items-center rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 p-2 ">
+        <div  class="">
+          <img :src="HumidityIcon" alt="Humidity" width="35">
+        </div>
+        <div>
+          <span>{{ Math.round(weatherState.main.humidity) }}%</span>
+        </div>
       </div>
 
       <!-- trial -->
       <!-- <div class="isolate aspect-video  rounded-xl bg-white/50 dark:bg-[#3d315f]/10 shadow-lg ring-1 ring-black/5 dark:ring-white/5">
-
         </div> -->
     </div>
   </div>

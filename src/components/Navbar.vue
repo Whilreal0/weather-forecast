@@ -18,7 +18,7 @@ onMounted(() => {
 </script>
 <template>
   <nav
-    class="w-full fixed bottom-0 z-10 md:static px-2.5 mb-2"
+    class="w-full fixed bottom-0 z-10 md:static px-2.5 md:px-0 mb-2 md:mt-2"
   >
     <!-- for nav -->
      <div class="py-3 rounded-2xl shadow-lg bg-white  bg-white/40  ring-1 ring-black/5">
